@@ -1,4 +1,4 @@
-package java.Stack;
+package main.Stack;
 
 public interface IStack<T> {
     void push(T item); //agrega valor a la pila
