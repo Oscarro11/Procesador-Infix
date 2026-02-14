@@ -19,9 +19,8 @@ public class ListaSimple<T> implements IList<T>{
     }
 
     public void agregarPrimero(T elemento){
-        NodoSimple<T> nuevo = new NodoSimple<T>(elemento, null);
-        nuevo.setSiguiente(cabeza);
-        cabeza = nuevo.clone();
+        NodoSimple<T> nuevo = new NodoSimple<T>(elemento, cabeza);
+        cabeza = nuevo;
     }
 
     public T retirarPrimero() throws NullPointerException{
@@ -30,7 +29,7 @@ public class ListaSimple<T> implements IList<T>{
         return dato;
     }
 
-    public T verPrimero(){
+    public T verPrimero() throws NullPointerException{
         return cabeza.getDato();
     }
 
