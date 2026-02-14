@@ -1,4 +1,4 @@
-package main.lists;
+package main.List;
 
 import java.lang.Cloneable;
 

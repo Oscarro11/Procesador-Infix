@@ -4,7 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
-import main.lists.ListaSimple;
+import main.List.ListaSimple;
+
 import java.util.ArrayList;
 import java.util.List;
 
