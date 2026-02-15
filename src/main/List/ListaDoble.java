@@ -48,8 +48,11 @@ public class ListaDoble<T> implements IList<T> {
 
     public T retirarPrimero() throws NullPointerException{
         T dato = cabeza.getDato();
-        cabeza = cabeza.getSiguiente();
-        cabeza.setPrevio(null);
+        cabeza = cabeza.getSiguiente();        
+        
+        if (cabeza != null) {
+            cabeza.setPrevio(null);
+        }
 
         return dato;
     };
