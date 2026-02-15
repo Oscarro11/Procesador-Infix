@@ -42,7 +42,10 @@ public class ConvertInToPostList{
             }
         }
 
-        builder.append(numeroEnConstruccion + " ");
+        if (!numeroEnConstruccion.equals("")) {
+            builder.append(numeroEnConstruccion + " ");    
+        }
+        
         while (!stack.isEmpty()) {
             builder.append(stack.retirarPrimero() + " ");
         }
