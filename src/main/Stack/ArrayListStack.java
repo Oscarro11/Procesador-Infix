@@ -1,6 +1,7 @@
 package main.Stack;
 
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 public class ArrayListStack<T> implements IStack<T> {
     private ArrayList<T> data;
@@ -15,14 +16,14 @@ public class ArrayListStack<T> implements IStack<T> {
 
     public T pop(){
         if (isEmpty()){
-            throw new RuntimeException("Stack vacío");
+            throw new NoSuchElementException("Stack vacío");
         }
         return data.remove(data.size() - 1);
     }
 
     public T peek(){
         if (isEmpty()){
-            throw new RuntimeException("Stack vacío");
+            throw new NoSuchElementException("Stack vacío");
         }
         return data.get(data.size() - 1);
     }

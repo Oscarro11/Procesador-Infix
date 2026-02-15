@@ -1,6 +1,7 @@
 package main.Stack;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class ListStack<T> implements IStack<T> {
     //propia interfaz
@@ -19,14 +20,14 @@ public class ListStack<T> implements IStack<T> {
 
     public T pop(){
         if (isEmpty()){
-            throw new RuntimeException("Stack vacío");
+            throw new NoSuchElementException("Stack vacío");
         }
         return list.removeFirst();
     }
 
     public T peek(){
         if (isEmpty()){
-            throw new RuntimeException("Stack vacío");
+            throw new NoSuchElementException("Stack vacío");
         }
         return list.getFirst();
     }

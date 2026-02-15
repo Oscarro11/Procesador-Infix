@@ -1,4 +1,5 @@
 package main.Stack;
+import java.util.NoSuchElementException;
 import java.util.Vector;
 
 public class VectorStack<T> implements IStack<T> {
@@ -18,14 +19,14 @@ public class VectorStack<T> implements IStack<T> {
 
     public T pop(){
         if (isEmpty()){
-            throw new RuntimeException("Stack vacío");
+            throw new NoSuchElementException("Stack vacío");
         }
         return data.remove(data.size() - 1);
     }
 
     public T peek(){
         if (isEmpty()){
-            throw new RuntimeException("Stack vacío");
+            throw new NoSuchElementException("Stack vacío");
         }
         return data.get(data.size() - 1);
     }
