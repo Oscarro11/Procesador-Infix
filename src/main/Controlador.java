@@ -58,14 +58,14 @@ public class Controlador {
      *                  </ul>
      * @throws IllegalArgumentException
      */
-    public void elegirADT(int categoria, int codigo) throws IllegalArgumentException{
+    public void elegirADT(int categoria, String nombreEstructura) throws IllegalArgumentException{
         switch (categoria) {
             case 1:
-                controladorInfix.generarList(codigo);
+                controladorInfix.generarList(nombreEstructura);
                 break;
         
             case 2:
-                controladorInfix.generarStack(codigo);
+                controladorInfix.generarStack(nombreEstructura);
                 break;
 
             default:

@@ -1,7 +1,6 @@
 package main;
 
 import java.security.InvalidParameterException;
-import java.util.ArrayList;
 
 import main.Converter.*;
 import main.List.*;
@@ -18,25 +17,17 @@ public class ControladorInfix {
 
     /**
      * Crea y guarda una estructura de datos de tipo Lista, con el proposito de usarse para el calculo de expresiones infix
-     * @param tipoList codigo del tipo de {@code IList} a crearse:<br>
-     *                  1 = Lista de encadenado simple<br>
-     *                  2 = Lista de encadenado doble
+     * @param tipoList nombre del tipo de {@code IList} a crearse
      * @throws InvalidParameterException
      */
-    public void generarList(int tipoList) throws InvalidParameterException{
-        switch (tipoList) {
-            case 1:
-                listaActiva = new ListaSimple<String>();
-                break;
-            
-            case 2:
-                listaActiva = new ListaDoble<String>();
-                break;
-
-            default:
-                listaActiva = null;
-                estructuraActiva = "";
-                throw new InvalidParameterException("No existe un tipo de lista con el numero: " + tipoList);
+    public void generarList(String tipoList) throws InvalidParameterException{
+        ListFactory<String> factory = new ListFactory<>();
+        
+        listaActiva = factory.createList(tipoList);
+        
+        if (listaActiva == null) {
+            estructuraActiva = "";
+            throw new InvalidParameterException("No existe un tipo de lista con el nombre: " + tipoList);
         }
 
         estructuraActiva = "lista";
@@ -44,30 +35,17 @@ public class ControladorInfix {
 
     /**
      * Crea y guarda una estructura de datos de tipo Stack, con el proposito de usarse para el calculo de expresiones infix
-     * @param tipoList codigo del tipo de {@code IStack} a crearse:<br>
-     *                  1 = ArrayList<br>
-     *                  2 = Vector<br>
-     *                  3 = Lista
+     * @param tipoList nombre del tipo de {@code IStack} a crearse
      * @throws InvalidParameterException
      */
-    public void generarStack(int tipoStack) throws InvalidParameterException{
-        switch (tipoStack) {
-            case 1:
-                stackActivo = new ArrayListStack<String>();
-                break;
-
-            case 2:
-                stackActivo = new VectorStack<String>();
-                break;
-
-            case 3:
-                stackActivo = new ListStack<String>(new ArrayList<String>());
-                break;
-
-            default:
-                stackActivo = null;
-                estructuraActiva = "";
-                throw new InvalidParameterException("No existe un tipo de stack con el numero: " + tipoStack);
+    public void generarStack(String tipoStack) throws InvalidParameterException{
+        StackFactory<String> factory = new StackFactory<>();
+        
+        stackActivo = factory.createStack(tipoStack);
+        
+        if (stackActivo == null) {
+            estructuraActiva = "";
+            throw new InvalidParameterException("No existe un tipo de stack con el nombre: " + tipoStack);
         }
 
         estructuraActiva = "stack";

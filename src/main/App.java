@@ -45,7 +45,7 @@ public class App {
                         switch (teclado.nextLine().strip()) {
                             case "1":
                                 try {
-                                    controlador.elegirADT(1, elegirTipoLista());
+                                    controlador.elegirADT(1, elegirTipoList());
                                     escribir("La estructura de datos se ha creado correctamente");
                                 } catch (Exception e) {
                                     escribir(e.getMessage() + "\n\n");
@@ -92,48 +92,22 @@ public class App {
         }
     }
 
-    public static int elegirTipoLista(){
+    public static String elegirTipoList(){
         escribir("""
-                Elija el tipo de Lista a usar:
-                1. Lista simplemente encadenada
-                2. Lista doblemente encadenada
+                Elija el tipo de List a usar. Puede ser: "simple" o "doble"
 
                 """);
 
-        switch (teclado.nextLine().strip()) {
-            case "1":
-                return 1;
-
-            case "2":
-                return 2;
-        
-            default:
-                return -1;
-        }
+        return teclado.nextLine().strip();
     }
 
-    public static int elegirTipoStack(){
+    public static String elegirTipoStack(){
         escribir("""
-                Elija el tipo de Stack a usar:
-                1. ArrayList
-                2. Vector
-                3. List
+                Elija el tipo de Stack a usar. Puede ser: "arrayList", "list" o "vector"
 
                 """);
 
-        switch (teclado.nextLine().strip()) {
-            case "1":
-                return 1;
-
-            case "2":
-                return 2;
-
-            case "3":
-                return 3;
-        
-            default:
-                return -1;
-        }
+        return teclado.nextLine().strip();
     }
 
     public static void escribir(String texto){

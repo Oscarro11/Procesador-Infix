@@ -13,7 +13,7 @@ public class ControladorInfixTest {
         String expresionInfix = "(10+20)*9";
         int resultado = (10+20)*9;
 
-        controlador.generarStack(2);
+        controlador.generarStack("list");
         Assertions.assertEquals(resultado, controlador.calcularInfix(expresionInfix));
     }
 
@@ -22,7 +22,7 @@ public class ControladorInfixTest {
         String expresionInfix = "(7-9)/2";
         int resultado = (7-9)/2;
 
-        controlador.generarList(1);
+        controlador.generarList("simple");
         Assertions.assertEquals(resultado, controlador.calcularInfix(expresionInfix));
     }
 

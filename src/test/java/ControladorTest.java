@@ -13,7 +13,7 @@ public class ControladorTest {
         StringBuilder builder = new StringBuilder();
         controlador = new Controlador("src/test/resources/infix1.txt");
     
-        controlador.elegirADT(1, 2);
+        controlador.elegirADT(1, "doble");
         builder.append("El resultado de operar la expresion '((10+20)*10)/3' es: 100\n");
         builder.append("El resultado de operar la expresion '(17+11)/4' es: 7\n");
         builder.append("El resultado de operar la expresion '(7-5)%2' es: 0\n");
@@ -26,7 +26,7 @@ public class ControladorTest {
         StringBuilder builder = new StringBuilder();
         controlador = new Controlador("src/test/resources/infix1.txt");
 
-        controlador.elegirADT(2, 2);
+        controlador.elegirADT(2, "list");
         builder.append("El resultado de operar la expresion '((10+20)*10)/3' es: 100\n");
         builder.append("El resultado de operar la expresion '(17+11)/4' es: 7\n");
         builder.append("El resultado de operar la expresion '(7-5)%2' es: 0\n");
@@ -51,6 +51,6 @@ public class ControladorTest {
     public void ADTinvalido(){
         controlador = new Controlador("src/test/resources/infix2.txt");
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> controlador.elegirADT(-1, 222));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> controlador.elegirADT(-1, "jsjsjsjsj"));
     }
 }
