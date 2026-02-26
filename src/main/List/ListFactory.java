@@ -4,7 +4,7 @@ package main.List;
 // se utiliza el patron Factory
 public class ListFactory<T> {
 
-   public IList<T> getList(String tipoList) {
+   public IList<T> createList(String tipoList) {
 
       // seleccion de la implementacion a utilizar:
       if (tipoList.equals("simple"))

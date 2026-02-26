@@ -6,7 +6,7 @@ import java.util.ArrayList;
 // se utiliza el patron Factory
 public class StackFactory<T> {
 
-   public IStack<T> getStack(String tipoStack) {
+   public IStack<T> createStack(String tipoStack) {
 
       // seleccion de la implementacion a utilizar:
       if (tipoStack.equals("arrayList"))
